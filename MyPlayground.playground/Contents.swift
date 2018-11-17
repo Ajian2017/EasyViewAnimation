@@ -807,10 +807,6 @@ animate(inParallel:[
 //let arr3 = arr2.sorted(by:<)
 //print(arr3)
 //
-//
-//
-//var str = "Hello, Ajian"
-//
 //let demoView = RandomColorView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 //PlaygroundPage.current.liveView = demoView
 
@@ -818,87 +814,11 @@ animate(inParallel:[
  Find more information for [Swift](http://swift.org)
 */
 //var index = str.index(of: ",")
-/**
- An example of using a *bulleted list*
- 
- * item 1
- * item 2
-    * item 2.1
- * item 3
- */
 //var str2 = str[index!...]
-
-/**
- # List A
- 1. Item 1, List A
- 1. Item 2, List A
- # List B
- 1. Item 1, List B
- */
 //let greeting = str[str.startIndex..<index!]
-
-/**
- An example of using a *code block*
- 
- A loop to print each character on a seperate line
- ```
- for character in "Aesop" {
- print(character)}
- }
- ```
- */
-
 //let index2 = str.index(index!, offsetBy:2)
-
-/**
- 1. Level 1, Item 1
- 1. Level 2, Item 1
- ---
- func emptyFunc() {
- }
- ---
- 1. Level 2, Item 2
- 1. Level 1, Item 2
- */
-
 //let name = str[index2..<str.endIndex]
-
-/// *This markup renders as one line of text*
-
 //let greeting2 = str.prefix(upTo:index!)
-
-/// Span elements *nest **inside other** span* elements
 //let greeting3 = str[..<index!]
-
-/**
- Errors thrown by fakeArray.
- 
- *Values*
- 
- `NegativeCount` The count is less than 0.
- 
- `EmptyString1` The first string argument is empty.
- 
- `EmptyString2` The second string argument is empty.
- 
- - Author:
- Newbie
- - Version:
- 0.1
- */
-
 //let name2 = str.suffix(from:index2)
-
-/**
- *A description field*
- - important: This is
- a way to get the
- readers attention for
- something.
- 
- - returns: Nothing
- 
- *Another description field*
- - version: 1.0
- */
 //let name3 = str[index2...]
