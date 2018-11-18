@@ -459,38 +459,38 @@ let obj = Obj()
 obj.doSomething()
 //obj.blah()
 //obj.foo()
-//func random(from range: Range<Int>) -> Int {
-//    let distance = range.upperBound - range.lowerBound
-//    let rnd = arc4random_uniform(UInt32(distance))
-//    return range.lowerBound + Int(rnd)
-//}
-//
-//func random(from range: ClosedRange<Int>) -> Int {
-//    return random(from: range.lowerBound ..< range.upperBound+1)
-//}
-//
-//let random1 = random(from: 1..<10)
-//print(random1)
-//let random2 = random(from: 1...9)
-//
-//enum ExceptionError:Error{
-//    case httpCode(Int)
-//}
-//func throwError() throws {
-//    throw ExceptionError.httpCode(500)
-//}
-//do{
-//    try throwError()
-//}catch ExceptionError.httpCode(let httpCode) where httpCode >= 500{
-//    print("server error")
-//}
+func random(from range: Range<Int>) -> Int {
+    let distance = range.upperBound - range.lowerBound
+    let rnd = arc4random_uniform(UInt32(distance))
+    return range.lowerBound + Int(rnd)
+}
 
-//let arrayOne = [1,2,3,4,5]
-//let dictionary = [1:"hehe1",2:"hehe2",nil:"qw"]
-//for i in arrayOne where dictionary[i] != nil {
-//    print(dictionary[i])
-//}
-//
+func random(from range: ClosedRange<Int>) -> Int {
+    return random(from: range.lowerBound ..< range.upperBound+1)
+}
+
+let random1 = random(from: 1..<10)
+print(random1)
+let random2 = random(from: 1...9)
+
+enum ExceptionError:Error{
+    case httpCode(Int)
+}
+func throwError() throws {
+    throw ExceptionError.httpCode(500)
+}
+do{
+    try throwError()
+}catch ExceptionError.httpCode(let httpCode) where httpCode >= 500{
+    print("server error")
+}
+
+let arrayOne = [1,2,3,4,5]
+let dictionary = [1:"hehe1",2:"hehe2",nil:"qw"]
+for i in arrayOne where dictionary[i] != nil {
+    print(dictionary[i])
+}
+
 //func genericFunction<S>(str:S) where S:ExpressibleByStringLiteral{
 //    print(str)
 //}
