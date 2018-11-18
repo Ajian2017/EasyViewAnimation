@@ -52,8 +52,6 @@ import Darwin
 //    }
 //}
 
-//print("----------------2")
-
 //@objc protocol CounterDataSource {
 //    @objc optional func increment(forCount count: Int) -> Int
 //    @objc optional var fixedIncrement: Int { get }
@@ -166,10 +164,10 @@ import Darwin
 //lightSwitch.toggle()
 //lightSwitch.toggle()
 
-protocol SomeProtocol {
-    static func someTypeMethod()
-    init(someParameter: Int)
-}
+//protocol SomeProtocol {
+//    static func someTypeMethod()
+//    init(someParameter: Int)
+//}
 
 //class SomeClass2: SomeProtocol {
 //    static func someTypeMethod() {
@@ -214,8 +212,6 @@ protocol SomeProtocol {
 //print("Here's a random number: \(generator.random())")
 //print("And another one: \(generator.random())")
 //print("And here's a random Boolean: \(generator.randomBool())")
-
-//print("-----------------3")
 
 //protocol FullyNamed {
 //    var fullName: String { get }
@@ -423,11 +419,9 @@ protocol SomeProtocol {
 //    print(thing.textualDescription)
 //}
 
-print("-------------------")
-
-protocol Meh {
-    func doSomething();
-}
+//protocol Meh {
+//    func doSomething();
+//}
 
 //Extend protocol Meh, where `Self` is of type `UIViewController`
 //func blah() will only exist for classes that inherit `UIViewController`.
