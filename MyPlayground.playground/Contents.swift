@@ -118,30 +118,30 @@ func wishHappyBirthday(to celebrator: Named & Aged) {
 
 let birthdayPerson = Person2(name: "Malcolm", age: 21)
 wishHappyBirthday(to: birthdayPerson)
-//
-//class Location {
-//    var latitude: Double
-//    var longitude: Double
-//    init(latitude: Double, longitude: Double) {
-//        self.latitude = latitude
-//        self.longitude = longitude
-//    }
-//}
 
-//class City: Location, Named {
-//    var name: String
-//    init(name: String, latitude: Double, longitude: Double) {
-//        self.name = name
-//        super.init(latitude: latitude, longitude: longitude)
-//    }
-//}
-//
-//func beginConcert(in location: Location & Named) {
-//    print("Hello, \(location.name) \(location.latitude)!")
-//}
-//
-//let seattle = City(name: "Seattle", latitude: 47.6, longitude: -122.3)
-//beginConcert(in: seattle)
+class Location {
+    var latitude: Double
+    var longitude: Double
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+}
+
+class City: Location, Named {
+    var name: String
+    init(name: String, latitude: Double, longitude: Double) {
+        self.name = name
+        super.init(latitude: latitude, longitude: longitude)
+    }
+}
+
+func beginConcert(in location: Location & Named) {
+    print("Hello, \(location.name) \(location.latitude)!")
+}
+
+let seattle = City(name: "Seattle", latitude: 47.6, longitude: -122.3)
+beginConcert(in: seattle)
 //
 //protocol TextRepresentable {
 //    var textualDescription: String { get }
