@@ -101,23 +101,23 @@ for _ in 1...4 {
     print(counter.count)
 }
 
-//protocol Named {
-//    var name: String { get }
-//}
-//protocol Aged {
-//    var age: Int { get }
-//}
-//struct Person2: Named, Aged {
-//    var name: String
-//    var age: Int
-//}
+protocol Named {
+    var name: String { get }
+}
+protocol Aged {
+    var age: Int { get }
+}
+struct Person2: Named, Aged {
+    var name: String
+    var age: Int
+}
 
-//func wishHappyBirthday(to celebrator: Named & Aged) {
-//    print("Happy birthday, \(celebrator.name), you're \(celebrator.age)!")
-//}
-//
-//let birthdayPerson = Person2(name: "Malcolm", age: 21)
-//wishHappyBirthday(to: birthdayPerson)
+func wishHappyBirthday(to celebrator: Named & Aged) {
+    print("Happy birthday, \(celebrator.name), you're \(celebrator.age)!")
+}
+
+let birthdayPerson = Person2(name: "Malcolm", age: 21)
+wishHappyBirthday(to: birthdayPerson)
 //
 //class Location {
 //    var latitude: Double
