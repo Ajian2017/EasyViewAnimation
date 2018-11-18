@@ -491,33 +491,33 @@ for i in arrayOne where dictionary[i] != nil {
     print(dictionary[i])
 }
 
-//func genericFunction<S>(str:S) where S:ExpressibleByStringLiteral{
-//    print(str)
-//}
-//// 也可以不使用where语句，直接在尖括号中定义时做限制
-//func genericFunction2<S:ExpressibleByStringLiteral>(str:S){
-//    print(str)
-//}
-//
-//genericFunction(str: "123")
-//
-//protocol aProtocol{}
-//extension aProtocol where Self:UIView{
-//    //只给遵守myProtocol协议的UIView添加了扩展
-//    func getString() -> String{
-//        return "string"
-//    }
-//}
+func genericFunction<S>(str:S) where S:ExpressibleByStringLiteral{
+    print(str)
+}
+// 也可以不使用where语句，直接在尖括号中定义时做限制
+func genericFunction2<S:ExpressibleByStringLiteral>(str:S){
+    print(str)
+}
 
-//var value:(Int,String) = (100,"小明")
-//switch value {
-//case let (x,_) where x < 60:
-//    print("不及格")
-//case let (x,_) where x > 90:
-//    print("完美")
-//default:
-//    print("及格")
-//}
+genericFunction(str: "123")
+
+protocol aProtocol{}
+extension aProtocol where Self:UIView{
+    //只给遵守myProtocol协议的UIView添加了扩展
+    func getString() -> String{
+        return "string"
+    }
+}
+
+var value:(Int,String) = (100,"小明")
+switch value {
+case let (x,_) where x < 60:
+    print("不及格")
+case let (x,_) where x > 90:
+    print("完美")
+default:
+    print("及格")
+}
 
 //typealias FetchLinksClosure = ([NSString]) -> Void
 //
