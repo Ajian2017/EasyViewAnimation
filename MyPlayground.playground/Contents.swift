@@ -142,27 +142,27 @@ func beginConcert(in location: Location & Named) {
 
 let seattle = City(name: "Seattle", latitude: 47.6, longitude: -122.3)
 beginConcert(in: seattle)
-//
-//protocol TextRepresentable {
-//    var textualDescription: String { get }
-//}
-//
-//protocol Togglable {
-//    mutating func toggle()
-//}
 
-//enum OnOffSwitch: Togglable {
-//    case off, on
-//    mutating func toggle() {
-//        switch self {
-//        case .off: self = .on
-//        case .on: self = .off
-//        }
-//    }
-//}
-//var lightSwitch = OnOffSwitch.off
-//lightSwitch.toggle()
-//lightSwitch.toggle()
+protocol TextRepresentable {
+    var textualDescription: String { get }
+}
+
+protocol Togglable {
+    mutating func toggle()
+}
+
+enum OnOffSwitch: Togglable {
+    case off, on
+    mutating func toggle() {
+        switch self {
+        case .off: self = .on
+        case .on: self = .off
+        }
+    }
+}
+var lightSwitch = OnOffSwitch.off
+lightSwitch.toggle()
+lightSwitch.toggle()
 
 //protocol SomeProtocol {
 //    static func someTypeMethod()
