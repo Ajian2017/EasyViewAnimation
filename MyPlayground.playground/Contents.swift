@@ -2,22 +2,22 @@ import UIKit
 import PlaygroundSupport
 import Darwin
 
-//extension Collection where Element: Equatable {
-//    func allEqual() -> Bool {
-//        for element in self {
-//            if element != self.first {
-//                return false
-//            }
-//        }
-//        return true
-//    }
-//}
-//
-//let equalNumbers = [100, 100, 100, 100, 100]
-//let differentNumbers = [100, 100, 200, 100, 200]
+extension Collection where Element: Equatable {
+    func allEqual() -> Bool {
+        for element in self {
+            if element != self.first {
+                return false
+            }
+        }
+        return true
+    }
+}
 
-//print(equalNumbers.allEqual())
-//print(differentNumbers.allEqual())
+let equalNumbers = [100, 100, 100, 100, 100]
+let differentNumbers = [100, 100, 200, 100, 200]
+
+print(equalNumbers.allEqual())
+print(differentNumbers.allEqual())
 
 protocol HasArea {
     var area: Double { get }
