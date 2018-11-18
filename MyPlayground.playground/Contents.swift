@@ -420,43 +420,43 @@ for thing in things {
     print(thing.textualDescription)
 }
 
-//protocol Meh {
-//    func doSomething();
-//}
+protocol Meh {
+    func doSomething();
+}
 
 //Extend protocol Meh, where `Self` is of type `UIViewController`
 //func blah() will only exist for classes that inherit `UIViewController`.
 //In fact, this entire extension only exists for `UIViewController` subclasses.
 
-//extension Meh where Self: UIViewController {
-//    func blah() {
-//        print("Blah");
-//    }
-//
-//    func foo() {
-//        print("Foo");
-//    }
-//}
-//
-//class Foo : UIViewController, Meh { //This compiles and since Foo is a `UIViewController` subclass, it has access to all of `Meh` extension functions and `Meh` itself. IE: `doSomething, blah, foo`.
-//    func doSomething() {
-//        print("Do Something");
-//    }
-//}
+extension Meh where Self: UIViewController {
+    func blah() {
+        print("Blah");
+    }
 
-//let foo = Foo()
-//foo.doSomething()
-//foo.blah()
-//foo.foo()
+    func foo() {
+        print("Foo");
+    }
+}
 
-//class Obj : NSObject, Meh { //While this compiles, it won't have access to any of `Meh` extension functions. It only has access to `Meh.doSomething()`.
-//    func doSomething() {
-//        print("Do Something");
-//    }
-//}
+class Foo : UIViewController, Meh { //This compiles and since Foo is a `UIViewController` subclass, it has access to all of `Meh` extension functions and `Meh` itself. IE: `doSomething, blah, foo`.
+    func doSomething() {
+        print("Do Something");
+    }
+}
 
-//let obj = Obj()
-//obj.doSomething()
+let foo = Foo()
+foo.doSomething()
+foo.blah()
+foo.foo()
+
+class Obj : NSObject, Meh { //While this compiles, it won't have access to any of `Meh` extension functions. It only has access to `Meh.doSomething()`.
+    func doSomething() {
+        print("Do Something");
+    }
+}
+
+let obj = Obj()
+obj.doSomething()
 //obj.blah()
 //obj.foo()
 //func random(from range: Range<Int>) -> Int {
