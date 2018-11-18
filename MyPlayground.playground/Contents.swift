@@ -519,66 +519,66 @@ default:
     print("及格")
 }
 
-//typealias FetchLinksClosure = ([NSString]) -> Void
-//
-//protocol FetchLinks{
-//    func fetchLinks(completion : FetchLinksClosure) -> Void
-//}
-//
-//class Obserber : FetchLinks{
-//    func fetchLinks(completion: ([NSString]) -> Void) {
-//        let strs = ["this", "is" , "a", "magic", "test"]
-//        completion(strs as [NSString])
-//    }
-//
-//    var name:String?
-//    {
-//        willSet{
-//            print("Will set an new value \(newValue) to name，current name is \(name)")
-//        }
-//        didSet{
-//            print("name changed from \(oldValue) to \(name)")
-//        }
-//    }
-//    var count:Int = 0
-//    {
-//        willSet{
-//            print("Will set an new value \(newValue) to count，current count is \(count)")
-//        }
-//        didSet{
-//            print("count changed form \(oldValue) to \(count)")
-//        }
-//    }
-//}
-//
-//var observer = Obserber()
-//observer.count = 1
-//observer.name = "ajian"
-//observer.fetchLinks { (result) in
-//    result.forEach({ (str) in
-//        print(str)
-//    })
-//}
-//
-//class AnotherClass : FetchLinks{
-//    func fetchLinks(completion: ([NSString]) -> Void) {
-//        defer { print("game over") }
-//        let strs = ["this", "is" , "another", "magic", "test"]
-//        completion(strs as [NSString])
-//    }
-//}
-//
-//var cls = AnotherClass()
-//cls.fetchLinks { (result) in
-//    result.forEach({ (str) in
-//        print(str)
-//    })
-//}
+typealias FetchLinksClosure = ([NSString]) -> Void
 
-//let arr: [String] = ["q", "w", "e", "r",  "t", "y"]
-//for (i, item) in arr.enumerated() {
-//    print("arr[\(i)] = \(item)")
-//}
+protocol FetchLinks{
+    func fetchLinks(completion : FetchLinksClosure) -> Void
+}
+
+class Obserber : FetchLinks{
+    func fetchLinks(completion: ([NSString]) -> Void) {
+        let strs = ["this", "is" , "a", "magic", "test"]
+        completion(strs as [NSString])
+    }
+
+    var name:String?
+    {
+        willSet{
+            print("Will set an new value \(newValue) to name，current name is \(name)")
+        }
+        didSet{
+            print("name changed from \(oldValue) to \(name)")
+        }
+    }
+    var count:Int = 0
+    {
+        willSet{
+            print("Will set an new value \(newValue) to count，current count is \(count)")
+        }
+        didSet{
+            print("count changed form \(oldValue) to \(count)")
+        }
+    }
+}
+
+var observer = Obserber()
+observer.count = 1
+observer.name = "ajian"
+observer.fetchLinks { (result) in
+    result.forEach({ (str) in
+        print(str)
+    })
+}
+
+class AnotherClass : FetchLinks{
+    func fetchLinks(completion: ([NSString]) -> Void) {
+        defer { print("game over") }
+        let strs = ["this", "is" , "another", "magic", "test"]
+        completion(strs as [NSString])
+    }
+}
+
+var cls = AnotherClass()
+cls.fetchLinks { (result) in
+    result.forEach({ (str) in
+        print(str)
+    })
+}
+
+let arr: [String] = ["q", "w", "e", "r",  "t", "y"]
+for (i, item) in arr.enumerated() {
+    print("arr[\(i)] = \(item)")
+}
 
 var urlComponents = URLComponents(string: "https://itunes.apple.com/search?media=music&entity=song")
 var queryItem = URLQueryItem(name: "term", value: "crowded house")
