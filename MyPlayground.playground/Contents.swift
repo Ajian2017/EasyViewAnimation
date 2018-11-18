@@ -728,71 +728,69 @@ animate(inParallel:[
 )
 
 
+enum RawGender {
+    case Male
+    case Female
+}
 
-//
-//enum RawGender {
-//    case Male
-//    case Female
-//}
-//
-//enum Gender :String{
-//    case Male = "hero"
-//    case Female = "roly"
-//}
-//
-//let male = Gender.Male
-//print(male.rawValue)
-//print(RawGender.Male.hashValue)
-//
-//switch male {
-//case Gender.Male: print("Gender is male")
-//case Gender.Female: print("Gender is female") // default case is not needed
-//}
-//
-//enum WeekDay :String {
-//    case Monday
-//    case Tuesday
-//    func day() ->String { return self.rawValue }
-//}
-//
-//print(WeekDay.Monday.day()) // prints Monday
-//
-//enum Student {
-//    case Name(String)
-//    case Mark(Int,Int,Int)
-//    case Other(Any)
-//}
-//
-//var studDetails = Student.Name("Swift")
-//var studMarks = Student.Mark(98,97,95)
-//var stuAny = Student.Other(["q","z","j"])
-//switch stuAny {
-//case .Name(let studName):
-//    print("Student name is: \(studName).")
-//case .Mark(let Mark1, let Mark2, let Mark3):
-//    print("Student Marks are: \(Mark1),\(Mark2),\(Mark3).")
-//case .Other(let Mark1):
-//    print("Student Other are: \(Mark1).")
-//default:
-//    print("Nothing")
-//}
-//
-//var arr = ["time","to","go","home"]
-//arr.forEach { (item) in
-//    print(item)
-//}
-//
-//let mapArr = arr.map { (item) in
-//    return "curItem:" + "\(item)"
-//}
-//print(mapArr)
-//
-//let filterArr = arr.filter { (item) in
-//    return item.count>2
-//    }.map { (item) in
-//    return "curItem:" + "\(item)"
-//}
-//print(filterArr)
+enum Gender :String{
+    case Male = "hero"
+    case Female = "roly"
+}
+
+let male = Gender.Male
+print(male.rawValue)
+print(RawGender.Male.hashValue)
+
+switch male {
+case Gender.Male: print("Gender is male")
+case Gender.Female: print("Gender is female") // default case is not needed
+}
+
+enum WeekDay :String {
+    case Monday
+    case Tuesday
+    func day() ->String { return self.rawValue }
+}
+
+print(WeekDay.Monday.day()) // prints Monday
+
+enum Student {
+    case Name(String)
+    case Mark(Int,Int,Int)
+    case Other(Any)
+}
+
+var studDetails = Student.Name("Swift")
+var studMarks = Student.Mark(98,97,95)
+var stuAny = Student.Other(["q","z","j"])
+switch stuAny {
+case .Name(let studName):
+    print("Student name is: \(studName).")
+case .Mark(let Mark1, let Mark2, let Mark3):
+    print("Student Marks are: \(Mark1),\(Mark2),\(Mark3).")
+case .Other(let Mark1):
+    print("Student Other are: \(Mark1).")
+default:
+    print("Nothing")
+}
+
+var arr3 = ["time","to","go","home"]
+arr3.forEach { (item) in
+    print(item)
+}
+
+let mapArr = arr3.map { (item) in
+    return "curItem:" + "\(item)"
+}
+print(mapArr)
+
+let filterArr = arr3.filter { (item) in
+    return item.count>2
+    }.map { (item) in
+    return "curItem:" + "\(item)"
+}
+print(filterArr)
 
 //var filterArr2 = arr.prefix(2)
 //print(filterArr2)
