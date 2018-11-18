@@ -808,12 +808,13 @@ animate(inParallel:[
 /**
  Find more information for [Swift](http://swift.org)
 */
-//var index = str.index(of: ",")
-//var str2 = str[index!...]
-//let greeting = str[str.startIndex..<index!]
-//let index2 = str.index(index!, offsetBy:2)
-//let name = str[index2..<str.endIndex]
-//let greeting2 = str.prefix(upTo:index!)
-//let greeting3 = str[..<index!]
-//let name2 = str.suffix(from:index2)
-//let name3 = str[index2...]
+var str = "Hello, Ajian"
+var index = str.index(of: ",")
+var str2 = str[index!...]
+let greeting = str[str.startIndex..<index!]
+let index2 = str.index(index!, offsetBy:2)
+let name = str[index2..<str.endIndex]
+let greeting2 = str.prefix(upTo:index!)
+let greeting3 = str[..<index!]
+let name2 = str.suffix(from:index2)
+let name3 = str[index2...]
