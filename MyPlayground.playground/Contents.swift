@@ -579,96 +579,96 @@ print(ncc1701.fullName)
 //    print("arr[\(i)] = \(item)")
 //}
 
-//var urlComponents = URLComponents(string: "https://itunes.apple.com/search?media=music&entity=song")
-//var queryItem = URLQueryItem(name: "term", value: "crowded house")
-//let urlForce = urlComponents?.url!
-//urlForce?.absoluteString
-//urlForce?.scheme
-//urlForce?.host
-//urlForce?.path
-//urlForce?.query
-//
-//enum Sorting: String {
-//    case numberOfStars = "stars"
-//    case numberOfForks = "forks"
-//    case recency = "updated"
-//}
-//
-//func findRepositories(matching query: String,
-//                      sortedBy sorting: Sorting) {
-//    var components = URLComponents()
-//    components.scheme = "https"
-//    components.host = "api.github.com"
-//    components.path = "/search/repositories"
-//    components.queryItems = [
-//        URLQueryItem(name: "q", value: query),
-//        URLQueryItem(name: "sort", value: sorting.rawValue)
-//    ]
-//
-//    // Getting a URL from our components is as simple as
-//    // accessing the 'url' property.
-//    let url = components.url
-//    print(url)
-//}
-//
-//findRepositories(matching: "qzj", sortedBy: .numberOfStars)
-//
-//struct Endpoint {
-//    let path: String
-//    let queryItems: [URLQueryItem]
-//}
-//
-//extension Endpoint {
-//    static func search(matching query: String,
-//                       sortedBy sorting: Sorting = .recency) -> Endpoint {
-//        return Endpoint(
-//            path: "/search/repositories",
-//            queryItems: [
-//                URLQueryItem(name: "q", value: query),
-//                URLQueryItem(name: "sort", value: sorting.rawValue)
-//            ]
-//        )
-//    }
-//
-//    // We still have to keep 'url' as an optional, since we're
-//    // dealing with dynamic components that could be invalid.
-//    var url: URL? {
-//        var components = URLComponents()
-//        components.scheme = "https"
-//        components.host = "api.github.com"
-//        components.path = path
-//        components.queryItems = queryItems
-//
-//        return components.url
-//    }
-//}
-//
-///// An enum representing either a failure with an explanatory error, or a success with a result value.
-//public enum Result<T> {
-//    case success(T)
-//    /// Constructs a success wrapping a `value`.
-//    public init(value: T) {
-//        self = .success(value)
-//    }
-//}
-//
-//class DataLoader {
-//    static func request(_ endpoint: Endpoint,
-//                 then handler: @escaping (Result<Data>) -> Void) {
-//        guard let url = endpoint.url else {
-//            let data = Data()
-//            return handler(.success(data))
-//        }
-//
-//        let urlSession = URLSession.shared
-//        let task = urlSession.dataTask(with: url) {
-//            data, _, error in
-//            let result = data.map(Result.success)!
-//            handler(result)
-//        }
-//        task.resume()
-//    }
-//}
+var urlComponents = URLComponents(string: "https://itunes.apple.com/search?media=music&entity=song")
+var queryItem = URLQueryItem(name: "term", value: "crowded house")
+let urlForce = urlComponents?.url!
+urlForce?.absoluteString
+urlForce?.scheme
+urlForce?.host
+urlForce?.path
+urlForce?.query
+
+enum Sorting: String {
+    case numberOfStars = "stars"
+    case numberOfForks = "forks"
+    case recency = "updated"
+}
+
+func findRepositories(matching query: String,
+                      sortedBy sorting: Sorting) {
+    var components = URLComponents()
+    components.scheme = "https"
+    components.host = "api.github.com"
+    components.path = "/search/repositories"
+    components.queryItems = [
+        URLQueryItem(name: "q", value: query),
+        URLQueryItem(name: "sort", value: sorting.rawValue)
+    ]
+
+    // Getting a URL from our components is as simple as
+    // accessing the 'url' property.
+    let url = components.url
+    print(url)
+}
+
+findRepositories(matching: "qzj", sortedBy: .numberOfStars)
+
+struct Endpoint {
+    let path: String
+    let queryItems: [URLQueryItem]
+}
+
+extension Endpoint {
+    static func search(matching query: String,
+                       sortedBy sorting: Sorting = .recency) -> Endpoint {
+        return Endpoint(
+            path: "/search/repositories",
+            queryItems: [
+                URLQueryItem(name: "q", value: query),
+                URLQueryItem(name: "sort", value: sorting.rawValue)
+            ]
+        )
+    }
+
+    // We still have to keep 'url' as an optional, since we're
+    // dealing with dynamic components that could be invalid.
+    var url: URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.github.com"
+        components.path = path
+        components.queryItems = queryItems
+
+        return components.url
+    }
+}
+
+/// An enum representing either a failure with an explanatory error, or a success with a result value.
+public enum Result<T> {
+    case success(T)
+    /// Constructs a success wrapping a `value`.
+    public init(value: T) {
+        self = .success(value)
+    }
+}
+
+class DataLoader {
+    static func request(_ endpoint: Endpoint,
+                 then handler: @escaping (Result<Data>) -> Void) {
+        guard let url = endpoint.url else {
+            let data = Data()
+            return handler(.success(data))
+        }
+
+        let urlSession = URLSession.shared
+        let task = urlSession.dataTask(with: url) {
+            data, _, error in
+            let result = data.map(Result.success)!
+            handler(result)
+        }
+        task.resume()
+    }
+}
 
 //DataLoader.request(.search(matching: "query")) { result in
 //    print(result)
