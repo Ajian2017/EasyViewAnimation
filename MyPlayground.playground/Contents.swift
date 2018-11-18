@@ -164,30 +164,30 @@ var lightSwitch = OnOffSwitch.off
 lightSwitch.toggle()
 lightSwitch.toggle()
 
-//protocol SomeProtocol {
-//    static func someTypeMethod()
-//    init(someParameter: Int)
-//}
+protocol SomeProtocol {
+    static func someTypeMethod()
+    init(someParameter: Int)
+}
 
-//class SomeClass2: SomeProtocol {
-//    static func someTypeMethod() {
-//
-//    }
-//
-//    required init(someParameter: Int) {
-//        // initializer implementation goes here
-//    }
-//}
-//
-//class SomeSubClass: SomeClass2 {
-//    // "required" from SomeProtocol conformance; "override" from SomeSuperClass
-//    required init(someParameter: Int) {
-//        fatalError("init(someParameter:) has not been implemented")
-//    }
-//}
-//
-//let cls2 = SomeClass2.init(someParameter: 4)
-//
+class SomeClass2: SomeProtocol {
+    static func someTypeMethod() {
+
+    }
+
+    required init(someParameter: Int) {
+        // initializer implementation goes here
+    }
+}
+
+class SomeSubClass: SomeClass2 {
+    // "required" from SomeProtocol conformance; "override" from SomeSuperClass
+    required init(someParameter: Int) {
+        fatalError("init(someParameter:) has not been implemented")
+    }
+}
+
+let cls2 = SomeClass2.init(someParameter: 4)
+
 //protocol RandomNumberGenerator {
 //    func random() -> Double
 //}
