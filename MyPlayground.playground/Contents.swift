@@ -213,47 +213,47 @@ print("Here's a random number: \(generator.random())")
 print("And another one: \(generator.random())")
 print("And here's a random Boolean: \(generator.randomBool())")
 
-//protocol FullyNamed {
-//    var fullName: String { get }
-//}
+protocol FullyNamed {
+    var fullName: String { get }
+}
+
+protocol FirstProtocol {
+    // protocol definition goes here
+    var mustBeSettable: Int { get set }
+    var doesNotNeedToBeSettable: Int { get }
+}
+
+protocol AnotherProtocol {
+    // protocol definition goes here
+    static var someTypeProperty: Int { get set }
+}
+
+struct SomeStructure: FirstProtocol, AnotherProtocol {
+    var mustBeSettable: Int = 1
+    var doesNotNeedToBeSettable: Int = 2
+    static var someTypeProperty: Int = 3
+}
 //
-//protocol FirstProtocol {
-//    // protocol definition goes here
-//    var mustBeSettable: Int { get set }
-//    var doesNotNeedToBeSettable: Int { get }
-//}
-//
-//protocol AnotherProtocol {
-//    // protocol definition goes here
-//    static var someTypeProperty: Int { get set }
-//}
-//
-//struct SomeStructure: FirstProtocol, AnotherProtocol {
-//    var mustBeSettable: Int = 1
-//    var doesNotNeedToBeSettable: Int = 2
-//    static var someTypeProperty: Int = 3
-//}
-//
-//struct Person: FullyNamed {
-//    var fullName: String
-//}
-//let john = Person(fullName: "John Appleseed")
-//
-//
-//class Starship: FullyNamed {
-//    var prefix: String?
-//    var name: String
-//    init(name: String, prefix: String? = nil) {
-//        self.name = name
-//        self.prefix = prefix
-//    }
-//    var fullName: String {
-//        return (prefix != nil ? prefix! + " " : "") + name
-//    }
-//}
-//
-//var ncc1701 = Starship(name: "Enterprise", prefix: "USS")
-//print(ncc1701.fullName)
+struct Person: FullyNamed {
+    var fullName: String
+}
+let john = Person(fullName: "John Appleseed")
+
+
+class Starship: FullyNamed {
+    var prefix: String?
+    var name: String
+    init(name: String, prefix: String? = nil) {
+        self.name = name
+        self.prefix = prefix
+    }
+    var fullName: String {
+        return (prefix != nil ? prefix! + " " : "") + name
+    }
+}
+
+var ncc1701 = Starship(name: "Enterprise", prefix: "USS")
+print(ncc1701.fullName)
 //
 //class SomeClass: NSObject, FirstProtocol, AnotherProtocol {
 //    var mustBeSettable: Int = 1
