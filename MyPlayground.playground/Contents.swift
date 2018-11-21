@@ -792,16 +792,16 @@ let filterArr = arr3.filter { (item) in
 }
 print(filterArr)
 
-//var filterArr2 = arr.prefix(2)
-//print(filterArr2)
-//filterArr2 = arr.suffix(1)
-////
-//var arr2 = ["time","to","go","home"] as Set
-//let arr3 = arr2.sorted(by:<)
-//print(arr3)
+var filterArr2 = arr.prefix(2)
+print(filterArr2)
+filterArr2 = arr.suffix(1)
 //
-//let demoView = RandomColorView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-//PlaygroundPage.current.liveView = demoView
+var arr2 = ["time","to","go","home"] as Set
+let arr4 = arr2.sorted(by:<)
+print(arr4)
+
+let demoView = RandomColorView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+PlaygroundPage.current.liveView = demoView
 
 /**
  Find more information for [Swift](http://swift.org)
