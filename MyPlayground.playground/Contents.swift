@@ -709,23 +709,23 @@ button.center.y = label.frame.maxY + 50
 button.alpha = 0
 view.addSubview(button)
 
-//animate([
-//    label.animate([
-//        .fadeIn(duration: 1),
-//        .move(byX: 0, y: -50, duration: 1)
-//        ]),
-//    button.animate([
-//        .fadeIn(duration: 2)
-//        ])
-//    ])
-
-animate(inParallel:[
+animate([
     label.animate([
-        .fadeIn(duration: 3),
-        .move(byX: 0, y: -50, duration: 3)]
-    ),
-    button.animate(.fadeIn(duration: 3))]
-)
+        .fadeIn(duration: 1),
+        .move(byX: 0, y: -50, duration: 1)
+        ]),
+    button.animate([
+        .fadeIn(duration: 2)
+        ])
+    ])
+
+//animate(inParallel:[
+//    label.animate([
+//        .fadeIn(duration: 3),
+//        .move(byX: 0, y: -50, duration: 3)]
+//    ),
+//    button.animate(.fadeIn(duration: 3))]
+//)
 
 
 enum RawGender {
