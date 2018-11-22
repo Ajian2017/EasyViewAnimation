@@ -816,4 +816,4 @@ let greeting2 = str.prefix(upTo:index!)
 let greeting3 = str[..<index!]
 let name2 = str.suffix(from:index2)
 let name3 = str[index2...]
-print(name3)
+print(name2)
